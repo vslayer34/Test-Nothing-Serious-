@@ -9,8 +9,8 @@ public partial class ClickAndMove : CharacterBody2D
 
 	private Vector2 _targetPosition;
 
-
-
+	
+	
     // Game Loop Methods---------------------------------------------------------------------------
     public override void _Input(InputEvent @event)
     {
