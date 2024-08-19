@@ -26,7 +26,7 @@ diffuse_mode = 3
 disable_ambient_light = true
 albedo_color = Color(0.421875, 0.0807495, 0.0807495, 1)
 metallic = 0.2
-roughness = 0.25
+roughness = 0.23
 emission = Color(0.667969, 0.0130463, 0.0130463, 1)
 clearcoat_enabled = true
 clearcoat = 0.35
@@ -40,7 +40,7 @@ material = SubResource("StandardMaterial3D_pxxlt")
 [node name="Main3DTest" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.899558, -0.378281, 0.218401, 0, 0.5, 0.866025, -0.436802, -0.77904, 0.449779, 0, 0, 0)
+transform = Transform3D(-0.866025, 0.433013, -0.25, 0, 0.5, 0.866025, 0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -50,4 +50,4 @@ environment = SubResource("Environment_tgylb")
 mesh = SubResource("SphereMesh_n38i0")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.788009, 0.269889, -0.553356, 0, 0.898794, 0.43837, 0.615664, 0.34544, -0.708258, -1.54468, 0.858728, -1.48614)
+transform = Transform3D(0.511294, 0.30097, -0.804982, 0, 0.936672, 0.350207, 0.859406, -0.179059, 0.478915, -1.11972, 0.602578, 0.80535)
