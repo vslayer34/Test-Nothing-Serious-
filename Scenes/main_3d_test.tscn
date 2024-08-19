@@ -1,3 +1,53 @@
-[gd_scene format=3 uid="uid://d3ir8btti53en"]
+[gd_scene load_steps=7 format=3 uid="uid://d3ir8btti53en"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_150ky"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_eonhi"]
+sky_material = SubResource("ProceduralSkyMaterial_150ky")
+
+[sub_resource type="Environment" id="Environment_tgylb"]
+background_mode = 2
+sky = SubResource("Sky_eonhi")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wytsn"]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxxlt"]
+next_pass = SubResource("StandardMaterial3D_wytsn")
+diffuse_mode = 3
+disable_ambient_light = true
+albedo_color = Color(0.421875, 0.0807495, 0.0807495, 1)
+metallic = 0.2
+roughness = 0.25
+emission = Color(0.667969, 0.0130463, 0.0130463, 1)
+clearcoat_enabled = true
+clearcoat = 0.35
+clearcoat_roughness = 1.0
+anisotropy_enabled = true
+anisotropy = 0.74
+
+[sub_resource type="SphereMesh" id="SphereMesh_n38i0"]
+material = SubResource("StandardMaterial3D_pxxlt")
 
 [node name="Main3DTest" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.899558, -0.378281, 0.218401, 0, 0.5, 0.866025, -0.436802, -0.77904, 0.449779, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tgylb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_n38i0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.788009, 0.269889, -0.553356, 0, 0.898794, 0.43837, 0.615664, 0.34544, -0.708258, -1.54468, 0.858728, -1.48614)
