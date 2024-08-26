@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3ir8btti53en"]
+[gd_scene load_steps=9 format=3 uid="uid://d3ir8btti53en"]
+
+[ext_resource type="Texture2D" uid="uid://bgeidros3ovqq" path="res://icon.svg" id="1_cdh2a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_150ky"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -10,8 +12,11 @@ sky_material = SubResource("ProceduralSkyMaterial_150ky")
 [sub_resource type="Environment" id="Environment_tgylb"]
 background_mode = 2
 sky = SubResource("Sky_eonhi")
+ambient_light_source = 3
 tonemap_mode = 2
+sdfgi_enabled = true
 glow_enabled = true
+adjustment_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wytsn"]
 cull_mode = 1
@@ -37,10 +42,13 @@ anisotropy = 0.74
 [sub_resource type="SphereMesh" id="SphereMesh_n38i0"]
 material = SubResource("StandardMaterial3D_pxxlt")
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_d5sn2"]
+size = Vector2(10, 10)
+
 [node name="Main3DTest" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, 0.433013, -0.25, 0, 0.5, 0.866025, 0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866025, 0.444421, -0.229108, 0, 0.458215, 0.888841, 0.5, 0.769759, -0.396826, -1.19045, 4.12385, -2.06193)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -51,3 +59,12 @@ mesh = SubResource("SphereMesh_n38i0")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.511294, 0.30097, -0.804982, 0, 0.936672, 0.350207, 0.859406, -0.179059, 0.478915, -1.11972, 0.602578, 0.80535)
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.504326, 0, 0.0790346)
+size = Vector3(1, 1, 1)
+texture_albedo = ExtResource("1_cdh2a")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_d5sn2")
+skeleton = NodePath("../Decal")
