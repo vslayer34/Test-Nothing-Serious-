@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt4ekwsfi1g73"]
+
+[ext_resource type="Script" path="res://Creating a 3D Character Controller With Animations with Godot 4!/Scripts/CameraController.cs" id="1_1clpm"]
+
+[node name="CameraController" type="Node3D"]
+script = ExtResource("1_1clpm")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+collision_mask = 3
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(-0.97668, 0.0369054, -0.211503, 4.39152e-10, 0.985116, 0.171893, 0.214699, 0.167885, -0.962143, -0.334319, 1.49639, -0.723243)

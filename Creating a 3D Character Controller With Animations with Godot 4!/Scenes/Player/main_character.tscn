@@ -8,6 +8,7 @@ radius = 0.24618
 height = 1.65
 
 [node name="MainCharacter" type="CharacterBody3D"]
+collision_mask = 2
 script = ExtResource("1_knx2a")
 
 [node name="Medea By M_ Arrebola GLTF" parent="." instance=ExtResource("1_1ca6p")]
