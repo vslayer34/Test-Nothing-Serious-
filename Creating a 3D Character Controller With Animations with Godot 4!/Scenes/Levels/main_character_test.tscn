@@ -1,10 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2105gia0b1pl"]
+[gd_scene load_steps=6 format=3 uid="uid://c2105gia0b1pl"]
 
 [ext_resource type="PackedScene" uid="uid://cahaws2ak6fdh" path="res://Creating a 3D Character Controller With Animations with Godot 4!/Scenes/Levels/test_level.tscn" id="1_iwr5g"]
 [ext_resource type="PackedScene" uid="uid://t7bcl46s2vi1" path="res://Creating a 3D Character Controller With Animations with Godot 4!/Scenes/Player/main_character.tscn" id="2_nc2c1"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8d2s5"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_x1oex"]
+sky_material = SubResource("ProceduralSkyMaterial_8d2s5")
+
+[sub_resource type="Environment" id="Environment_8r7wj"]
+background_mode = 2
+sky = SubResource("Sky_x1oex")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="MainCharacterTest" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8r7wj")
 
 [node name="TestLevel" parent="." instance=ExtResource("1_iwr5g")]
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_nc2c1")]
+
+[node name="CameraController" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraController"]
+transform = Transform3D(-0.97668, 0.0369053, -0.211503, 0, 0.985116, 0.171893, 0.214699, 0.167885, -0.962143, -0.334319, 1.49639, -0.723243)
