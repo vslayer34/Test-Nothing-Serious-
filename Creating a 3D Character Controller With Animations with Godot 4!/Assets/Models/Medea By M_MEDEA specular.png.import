@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b1c4ealcno2u3"
+path="res://.godot/imported/Medea By M_MEDEA specular.png-5b7e8a682f5efc56c2f5f4a5666aab71.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "147219bd06fd86a861a34f77d4f60f06"
+}
+
+[deps]
+
+source_file="res://Creating a 3D Character Controller With Animations with Godot 4!/Assets/Models/Medea By M_MEDEA specular.png"
+dest_files=["res://.godot/imported/Medea By M_MEDEA specular.png-5b7e8a682f5efc56c2f5f4a5666aab71.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

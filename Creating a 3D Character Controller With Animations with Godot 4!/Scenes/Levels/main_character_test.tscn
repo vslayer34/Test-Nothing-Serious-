@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2105gia0b1pl"]
+
+[ext_resource type="PackedScene" uid="uid://cahaws2ak6fdh" path="res://Creating a 3D Character Controller With Animations with Godot 4!/Scenes/Levels/test_level.tscn" id="1_iwr5g"]
+[ext_resource type="PackedScene" uid="uid://t7bcl46s2vi1" path="res://Creating a 3D Character Controller With Animations with Godot 4!/Scenes/Player/main_character.tscn" id="2_nc2c1"]
+
+[node name="MainCharacterTest" type="Node3D"]
+
+[node name="TestLevel" parent="." instance=ExtResource("1_iwr5g")]
+
+[node name="MainCharacter" parent="." instance=ExtResource("2_nc2c1")]
